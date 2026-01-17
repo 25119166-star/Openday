@@ -37,7 +37,7 @@
             background-size: cover;
             background-position: center;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
         }
 
         .header {
@@ -54,7 +54,7 @@
             border: 3px solid #007bff;
         }
 
-        h1 { margin: 10px 0 5px; color: #007bff; font-size: 1.5rem; }
+        h1 { margin: 10px 0 5px; color: #007bff; font-size: 30px; }
         .tagline { font-style: italic; color: #666; font-size: 1.1rem; }
 
         .section { margin: 25px 0; }
@@ -76,8 +76,7 @@
         /* Thanh chọn Lộ trình */
         #routeSelect {
             width: 100%;
-            max-width: 100%;
-            padding: 12px;
+            padding: 10px;
             font-size: 18px;
             border: 3px solid #007bff;
             border-radius: 15px;
@@ -88,11 +87,17 @@
             text-align: center;
             font-size: 20px;
             text-align: center;
+            color: #333;
+            display: block;      /* Biến thẻ thành khối */
+            margin: 5px auto;      /* Căn giữa cả khối select */
+            max-width: 100%;    /* Giới hạn độ rộng để trông đẹp hơn trên mobile */
+    /* các thuộc tính khác giữ nguyên... */
         }
 
         /* Danh sách liên hệ */
         .contact-info p {
-            width: 250px ;
+            width:95%;
+            max-width: 250px ;
             margin: 15px 0;
             background: #f9f9f9;
             padding: 10px;
@@ -101,7 +106,7 @@
             border: 3px solid #007bff;
         }
         .contact-info p:hover { background: #eef6ff; }
-        .btn-call { text-decoration: none; color: #333; font-size: 18px; font-weight: bold; display: block; }
+        .btn-call { text-decoration: none; color: #333; font-size: 20px; font-weight: bold; display: block; }
 
         /* Mobile Responsive */
         @media (max-width: 600px) {
@@ -137,10 +142,10 @@
         <div class="section">
             <h2>Lộ trình di chuyển</h2>
             <select id="routeSelect" onchange="updateRouteImage()">
-                <option value="route1"><strong>Lộ trình 1</strong></option>
-                <option value="route2">Lộ trình 2</option>
-                <option value="route3">Lộ trình 3</option>
-                <option value="route4">Lộ trình 4</option>
+                <option value="route1">🧭 Lộ trình 1</option>
+                <option value="route2">🧭 Lộ trình 2</option>
+                <option value="route3">🧭 Lộ trình 3</option>
+                <option value="route4">🧭 Lộ trình 4</option>
             </select>
             <img id="routeImage" src="https://i.postimg.cc/PqzY66Rx/z7435051159814-dd1655e887b3a4b96cf29754ea98d573.jpg" alt="Ảnh lộ trình" class="map-style">
         </div>

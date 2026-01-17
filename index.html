@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông Tin Cá Nhân</title>
+    <title>Thông Tin Cá Nhân - HCMUTE</title>
     <style>
-    
         /* Thiết lập cơ bản */
-       
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f5f5f5;
             color: #333;
+            font-size: 18px;
         }
 
+        /* Container chính bọc toàn bộ nội dung */
         .container {
             max-width: 850px;
             margin: 25px auto;
@@ -24,61 +24,26 @@
             padding: 20px;
             box-shadow: 0 4px 25px rgba(0,0,0,0.1);
             border-radius: 20px;
-
-    }
-         .hero-section {
-        width: 100%;
-        height:200px;
-        max-width: 890px;
-        margin: 20px auto;
-        background-image: url('https://i.postimg.cc/nh7R5LHm/611924973-1213074604302125-343-6581-2337-1768296676.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white; 
-        border-radius: 15px; /* Bo góc nếu muốn */
-        margin: 0 auto;
-        box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-        
-}
-        .map {
-        width: 100%;
-        height:750px;
-        max-width: 900px;
-        background-image: url('https://i.postimg.cc/nh7R5LHm/611924973-1213074604302125-343-6581-2337-1768296676.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white; 
-        border-radius: 40px; /* Bo góc nếu muốn */
-        border: 3px solid #007bff;
-        margin: 0 auto;
-}
-        .timeline {
-        width: 100%;
-        height:700px;
-        max-width: 900px;
-        background-image: url('https://i.postimg.cc/nh7R5LHm/611924973-1213074604302125-343-6581-2337-1768296676.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white; 
-        border-radius: 40px; /* Bo góc nếu muốn */
-        border: 3px solid #007bff;
-        margin: 0 auto;
+            box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
         }
-        /* Ảnh đại diện và Header */
+
+        /* Hero Image trên cùng */
+        .hero-section {
+            width: 100%;
+            height: 200px;
+            max-width: 850px;
+            margin: 20px auto;
+            background-image: url('https://i.postimg.cc/nh7R5LHm/611924973-1213074604302125-343-6581-2337-1768296676.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
         .header {
             text-align: center;
             border-bottom: 2px solid #eee;
             padding-bottom: 20px;
-            
         }
 
         .avatar {
@@ -88,87 +53,120 @@
             object-fit: cover;
             border: 3px solid #007bff;
         }
-        .btn-call {
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        display: inline-block;
-    }
-        h1 { margin: 10px 0 5px; color: #007bff; }
-        .tagline { font-style: italic; color: #666666;  font-size:1.2rem}
- 
-        /* Các mục nội dung */
-        .section { margin: 20px 0; font-size: 18px; }
-        h2 { border-left: 5px solid #007bff; padding-left: 10px; font-size: 1.5rem; }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
+        h1 { margin: 10px 0 5px; color: #007bff; font-size: 1.5rem; }
+        .tagline { font-style: italic; color: #666; font-size: 1.1rem; }
+
+        .section { margin: 25px 0; }
+        h2 { border-left: 5px solid #007bff; padding-left: 10px; font-size: 1.5rem; margin-bottom: 15px; }
+
+        /* Style chung cho các khung ảnh (Bản đồ và Lộ trình) */
+        .map-style {
+            width: 100%;
+            max-width: 100%; /* Để nó vừa khít container */
+            height: auto;
+            min-height: 400px;
+            border-radius: 30px;
+            border: 3px solid #007bff;
+            display: block;
+            margin: 15px auto;
+            object-fit: cover;
         }
 
-        .skills-list li {
-            background: #e1ecf4;
-            color: #032842;
-            padding: 5px 12px;
+        /* Thanh chọn Lộ trình */
+        #routeSelect {
+            width: 100%;
+            max-width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            border: 3px solid #007bff;
+            border-radius: 15px;
+            cursor: pointer;
+            outline: none;
+            background-color: #fff;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Danh sách liên hệ */
+        .contact-info p {
+            width: 200px ;
+            margin: 15px 0;
+            background: #f9f9f9;
+            padding: 10px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            transition: 0.3s;
+            border: 3px solid #007bff;
         }
+        .contact-info p:hover { background: #eef6ff; }
+        .btn-call { text-decoration: none; color: #333; font-size: 18px; font-weight: bold; display: block; }
 
-        /* Thông tin liên hệ */
-        .contact-info a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover { text-decoration: underline; }
-
-        /* Responsive cho điện thoại */
+        /* Mobile Responsive */
         @media (max-width: 600px) {
             .container { margin: 10px; padding: 15px; }
+            h1 { font-size: 1.2rem; }
+            .map-style { min-height: 300px; }
         }
     </style>
 </head>
 <body>
-<div class="hero-section">
-    
-</div>
-</div>
-<div class="container">
-    <div class="header">
-        <img src="https://i.postimg.cc/MTkfppwD/Logo-HCMUTE-Corel-white-background.jpg" alt="Avatar" class="avatar">
-        <h1>ĐẠI HỌC CÔNG NGHỆ KỸ THUẬT TP. HỒ CHÍ MINH</h1>
-        <p class="tagline">Ho Chi Minh City University of Technology and Engineering</p>
+
+    <div class="hero-section"></div>
+
+    <div class="container">
+        <div class="header">
+            <img src="https://i.postimg.cc/MTkfppwD/Logo-HCMUTE-Corel-white-background.jpg" alt="Avatar" class="avatar">
+            <h1>ĐẠI HỌC CÔNG NGHỆ KỸ THUẬT TP. HỒ CHÍ MINH</h1>
+            <p class="tagline">Ho Chi Minh City University of Technology and Engineering</p>
+        </div>
+
+        <div class="section">
+            <h2>Địa chỉ trường</h2>
+            <p><a href="https://maps.app.goo.gl/4M55U5ZHqu9xDEoCA"style="text-decoration: none;color:black ">📍<strong>Cơ sở chính: </strong></a> Số 1 Võ Văn Ngân, Phường Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+            <p><a href="https://maps.app.goo.gl/rwehCLqf2UReJUJo6"style="text-decoration: none; color:black">📍<strong>Cơ sở 2:</strong></a> 484 Lê Văn Việt, Phường Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+
+        </div>
+
+        <div class="section">
+            <h2>Bản đồ trường</h2>
+            <img src="https://i.postimg.cc/NFKFGSMV/z7435043733631-72c63b5d02cd44540c0d11404f02bd23.jpg" alt="map" class="map-style">
+        </div>
+
+        <div class="section">
+            <h2>Lộ trình di chuyển</h2>
+            <select id="routeSelect" onchange="updateRouteImage()">
+                <option value="route1"><strong>Lộ trình 1</strong></option>
+                <option value="route2">Lộ trình 2</option>
+                <option value="route3">Lộ trình 3</option>
+                <option value="route4">Lộ trình 4</option>
+            </select>
+            <img id="routeImage" src="https://i.postimg.cc/PqzY66Rx/z7435051159814-dd1655e887b3a4b96cf29754ea98d573.jpg" alt="Ảnh lộ trình" class="map-style">
+        </div>
+
+        <div class="section contact-info">
+            <h2>Liên hệ CTV hướng dẫn</h2>
+            <p><a href="tel:0902062276" class="btn-call">☎️ Nguyễn Thanh Toàn</a></p>
+            <p><a href="tel:0859483038" class="btn-call">☎️ Trương Cảnh Hào</a></p>
+            <p><a href="tel:0913599646" class="btn-call">☎️ Trần Trí Dũng</a></p>
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Địa chỉ trường</h2>
-        <p><a href="https://maps.app.goo.gl/4M55U5ZHqu9xDEoCA"style="text-decoration: none;color:black ">📍<strong>Cơ sở chính: </strong></a> Số 1 Võ Văn Ngân, Phường Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh</p>
-	    <p><a href="https://maps.app.goo.gl/rwehCLqf2UReJUJo6"style="text-decoration: none; color:black">📍<strong>Cơ sở 2:</strong></a> 484 Lê Văn Việt, Phường Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh</p>
-    </div>
+    <script>
+    function updateRouteImage() {
+        var select = document.getElementById("routeSelect");
+        var image = document.getElementById("routeImage");
+        var choice = select.value;
 
-    <div class="section">
-        <h2>Bản đồ trường ĐẠI HỌC CÔNG NGHỆ KỸ THUẬT TP. HỒ CHÍ MINH </h2>
-        <img src="https://i.postimg.cc/NFKFGSMV/z7435043733631-72c63b5d02cd44540c0d11404f02bd23.jpg" alt="map" class="map">
-    </div>
- <div class="section">
-        <h2>Lộ trình</h2>
-        <img src="https://i.postimg.cc/mkdb9wcD/z7435051159814-dd1655e887b3a4b96cf29754ea98d573.jpg" alt="timeline" class="timeline">
-        </ul>
-    </div>
+        var routes = {
+            "route1": "https://i.postimg.cc/PqzY66Rx/z7435051159814-dd1655e887b3a4b96cf29754ea98d573.jpg",
+            "route2": "https://i.postimg.cc/K8TnTc7w/z7435059220489-be890cdb3ff3fd5b77d2414e7d291dbf.jpg",
+            "route3": "https://i.postimg.cc/W3T6TRkk/z7435060847922-a7df654ad95f770134b3f233ae373b2f.jpg",
+            "route4": "https://i.postimg.cc/Yqs3gy5c/z7435062144779-ec60bce532c36c44253eba69ff082dba.jpg"
+        };
 
-    <div class="section contact-info">
-        <h2>Liên hệ CTV hướng dẫn</h2>
-  <p><a href="tel:0902062276" style="text-decoration: none; font-size:20px; color:black;text-align:center" class="btn-call">☎️<strong> Nguyễn Thanh Toàn</strong></a></p>
-  
-  <p><a href="tel:0859483038" style="text-decoration: none; font-size:20px; color:black;justify-content: center" class="btn-call">☎️<strong> Trương Cảnh Hào</strong></a></p>
-  
-  <p><a href="tel:0913599646" style="text-decoration: none; font-size:20px; color:black;text-align:center" class="btn-call">☎️<strong> Trần Trí Dũng</strong></a></p>
-  
-</div>
-</div>
-
+        image.src = routes[choice];
+    }
+    </script>
 </body>
 </html>

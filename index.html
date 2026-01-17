@@ -19,6 +19,7 @@
         /* Container chính bọc toàn bộ nội dung */
         .container {
             max-width: 850px;
+            width: calc(100% - 40px);
             margin: 25px auto;
             background: #fff;
             padding: 20px;
@@ -30,8 +31,8 @@
         /* Hero Image trên cùng */
         .hero-section {
             width: 100%;
+            width: calc(100% - 40px);
             height: 200px;
-            max-width: 840px;
             margin: 20px auto;
             background-image: url('https://i.postimg.cc/nh7R5LHm/611924973-1213074604302125-343-6581-2337-1768296676.jpg');
             background-size: cover;
@@ -110,7 +111,10 @@
 
         /* Mobile Responsive */
         @media (max-width: 600px) {
-            .container { margin: 10px; padding: 15px; }
+            .container, .hero-section {
+        width: calc(100% - 20px); /* Trên điện thoại thu hẹp khoảng cách lề còn 10px mỗi bên */
+        margin: 10px auto;
+    }
             h1 { font-size: 1.2rem; }
             .map-style { min-height: 300px; }
         }

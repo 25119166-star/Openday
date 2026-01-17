@@ -81,25 +81,37 @@
         }
 
         /* Thanh chọn Lộ trình */
-        #routeSelect {
-            width: 100%;
-            padding: 10px;
-            font-size: 18px;
-            border: 3px solid #007bff;
-            border-radius: 15px;
-            cursor: pointer;
-            outline: none;
-            background-color: #fff;
-            font-weight: bold;
-            text-align: center;
-            font-size: 20px;
-            text-align: center;
-            color: #333;
-            display: block;      /* Biến thẻ thành khối */
-            margin: 5px auto;      /* Căn giữa cả khối select */
-            max-width: 100%;    /* Giới hạn độ rộng để trông đẹp hơn trên mobile */
-    /* các thuộc tính khác giữ nguyên... */
-        }
+       #routeSelect {
+    width: 100%;
+    max-width: 100%; 
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    border: 3px solid #007bff;
+    border-radius: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    margin: 10px auto;
+
+    /* Căn giữa chữ quan trọng ở đây */
+    text-align: center;
+    text-align-last: center; /* Hỗ trợ căn giữa trên một số trình duyệt đặc biệt */
+    
+    /* Xóa icon mũi tên mặc định của hệ thống để chữ không bị lệch */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Nếu muốn có mũi tên nhưng vẫn căn giữa, có thể dùng background-image */
+}
+
+/* Đảm bảo các dòng bên trong cũng căn giữa */
+#routeSelect option {
+    text-align: center;
+}
 
         /* Danh sách liên hệ */
         .contact-info p {

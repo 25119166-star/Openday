@@ -68,18 +68,23 @@
         h2 { border-left: 5px solid #007bff; padding-left: 10px; font-size: 1.5rem; margin-bottom: 15px; }
 
         /* Style chung cho các khung ảnh (Bản đồ và Lộ trình) */
-        .map-style {
-            width: 100%;
-            max-width: 900px; /* Để nó vừa khít container */
-            height: auto;
-            min-height: 400px;
-            border-radius: 20px;
-            border: 3px solid #007bff;
-            display: block;
-            margin: 15px auto;
-            object-fit: cover;
-        }
-
+       .map-style {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        /* Loại bỏ hoàn toàn min-height và object-fit để ảnh hiển thị tự nhiên */
+        min-height: unset; 
+        object-fit: fill; 
+        
+        border-radius: 20px;
+        border: 3px solid #007bff;
+        display: block;
+        margin: 15px auto;
+        
+        /* Cực kỳ quan trọng để không bị tràn lề trên Android */
+        box-sizing: border-box; 
+        overflow: hidden;
+}
         /* Thanh chọn Lộ trình */
        #routeSelect {
     width: 100%;
@@ -142,7 +147,11 @@
         height: 160px;     /* Giảm chiều cao ảnh trên mobile cho đỡ thô */
     }
             h1 { font-size: 1.5rem; }
-            .map-style { min-height: 300px; }
+            .map-style {
+        border-width: 2px; /* Giảm độ dày viền trên màn hình nhỏ cho thanh thoát */
+        border-radius: 15px;
+        margin: 10px auto;
+    }
         }
     </style>
 </head>

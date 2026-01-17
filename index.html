@@ -18,28 +18,29 @@
 
         /* Container chính bọc toàn bộ nội dung */
         .container {
-            max-width: 850px;
-            width: calc(100% - 40px);
-            margin: 25px auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-            border-radius: 20px;
-            box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
-        }
+        width: 90%;            /* Phải bằng với width của hero-section */
+        max-width: 850px;      /* Phải bằng với max-width của hero-section */
+        margin: 0 auto 25px auto; /* Căn giữa màn hình */
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+        border-radius: 20px;
+        box-sizing: border-box; 
+    }
 
         /* Hero Image trên cùng */
         .hero-section {
-            width: 100%;
-            width: calc(100% - 40px);
-            height: 200px;
-            margin: 20px auto;
-            background-image: url('https://i.postimg.cc/nh7R5LHm/611924973-1213074604302125-343-6581-2337-1768296676.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-        }
+        width: 90%;            /* Chiều ngang chiếm 90% màn hình */
+        max-width: 850px;      /* Giới hạn tối đa bằng với container */
+        height: 200px;
+        margin: 20px auto;     /* 'auto' ở hai bên sẽ giúp nó căn giữa màn hình */
+        background-image: url('https://i.postimg.cc/nh7R5LHm/611924973-1213074604302125-343-6581-2337-1768296676.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 15px;
+        box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+        display: block;        /* Đảm bảo nó hoạt động như một khối */
+}
 
         .header {
             text-align: center;
@@ -111,9 +112,13 @@
 
         /* Mobile Responsive */
         @media (max-width: 600px) {
-            .container, .hero-section {
-        width: calc(100% - 20px); /* Trên điện thoại thu hẹp khoảng cách lề còn 10px mỗi bên */
-        margin: 10px auto;
+            .hero-section, .container {
+        width: 92%;        /* Trên mobile có thể cho rộng ra một chút (92%) */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-section {
+        height: 160px;     /* Giảm chiều cao ảnh trên mobile cho đỡ thô */
     }
             h1 { font-size: 1.2rem; }
             .map-style { min-height: 300px; }
